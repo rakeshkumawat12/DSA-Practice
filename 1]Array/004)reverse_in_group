@@ -15,16 +15,16 @@ function reverseInGroups(arr, n, k){
     for (let i = 0; i < n; i += k) {
 
         if (i + k < n) {
-            this.reverse(arr, n, i, i + k - 1);
+            reverse(arr, n, i, i + k - 1);
         }
         else {
-            this.reverse(arr, n, i, n - 1);
+            reverse(arr, n, i, n - 1);
         }
-
-
     }
+    console.log(`${arr}`)
 }
 
 let arr = [1, 2, 3, 4, 5];  //3 2 1 5 4
 let n = arr.length;
 let k = 3
+let arr1 = reverseInGroups(arr, n, k);
