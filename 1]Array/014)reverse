@@ -1,0 +1,17 @@
+function reverse(arr){
+  let low =0;
+  let high = arr.length-1;
+  
+  while (low<high){
+    let temp = arr[low];
+    arr[low] = arr[high];
+    arr[high] = temp;
+    
+    low++;
+    high--;
+  }
+  console.log(arr)
+}
+
+let arr =[1,2,3,4]
+reverse(arr)

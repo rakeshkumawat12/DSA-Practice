@@ -1,0 +1,11 @@
+function insert (arr, position, element){
+  for ( i=arr.length; i > position;  i--){
+    arr[i] = arr[i-1];
+  }
+
+  arr[position] = element;
+  console.log(arr)
+}
+
+let arr = [6,7,9, 0]
+insert(arr, 2, 8)
