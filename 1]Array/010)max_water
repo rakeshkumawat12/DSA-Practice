@@ -15,6 +15,7 @@ function maxWater(arr, n)
             {
                 right = Math.max(right, arr[j]);
             }
+            
             res += Math.min(left, right) - arr[i];
         }
         console.log( res);
