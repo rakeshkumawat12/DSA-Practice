@@ -11,8 +11,8 @@ class Node
 
 function removeLoop(head)
     {
-        let fast = head.next;
         let slow = head;
+        let fast = head.next;
         
         while( fast !== slow )
         {

@@ -1,15 +1,15 @@
 
 var head;
 class Node {
-        constructor(val) {
-            this.data = val;
-            this.next = null;
-        }
+    constructor(val) {
+        this.data = val;
+        this.next = null;
     }
-function reverse(head , k) {
-    if (head == null){
-        console.log("NULL");
 }
+function reverse(head, k) {
+    if (head == null) {
+        console.log("NULL");
+    }
     var current = head;
     var next = null;
     var prev = null;
@@ -42,21 +42,21 @@ function printList() {
     }
     console.log("<br/>");
 }
-    push(9);
-    push(8);
-    push(7);
-    push(6);
-    push(5);
-    push(4);
-    push(3);
-    push(2);
-    push(1);
+push(9);
+push(8);
+push(7);
+push(6);
+push(5);
+push(4);
+push(3);
+push(2);
+push(1);
 
-    console.log("Given Linked List");
-    printList();
+console.log("Given Linked List");
+printList();
 
 console.log("Reversed list");
-    head = reverse(head, 3);
+head = reverse(head, 3);
 
-    
-    
+
+
