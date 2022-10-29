@@ -29,19 +29,13 @@ function reverse(head, k) {
 
     console.log(prev);
 }
-function push(new_data) {
-    new_node = new Node(new_data);
-    new_node.next = head;
-    head = new_node;
+function push(data) {
+    newNode = new Node(data);
+    newNode.next = head;
+    head = newNode;
 }
-function printList() {
-    temp = head;
-    while (temp != null) {
-        console.log(temp.data + " ");
-        temp = temp.next;
-    }
-    console.log("<br/>");
-}
+
+
 push(9);
 push(8);
 push(7);
@@ -52,11 +46,7 @@ push(3);
 push(2);
 push(1);
 
-console.log("Given Linked List");
-printList();
-
-console.log("Reversed list");
-head = reverse(head, 3);
+reverse(head, 3);
 
 
 
