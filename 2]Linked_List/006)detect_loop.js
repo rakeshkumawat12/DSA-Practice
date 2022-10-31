@@ -1,43 +1,38 @@
-
 var head;
-class Node {
-    constructor(val) {
-        this.data = val;
+
+class Node{
+    constructor(data){
+        this.value = data;
         this.next = null;
     }
 }
 
-function push(new_data) {
-    var new_node = new Node(new_data);
-    new_node.next = head;
-    head = new_node;
+function detectLoop(head){
+  if (head === null)
+    console.log(false)
+  let p = head;
+  let q = head;
+  while(p != null && q != null && q.next != null){
+    p = p.next;
+    q = q.next.next;
+    if(p == q)
+      console.log(true);
+  }
+  console.log(false)
 }
 
-function detectLoop(head) {
-    if (!head)
-        return false;
-    let fast = head.next;
-    let slow = head;
-
-    while (fast !== slow) {
-        if (!fast || !fast.next)
-            return false;
-
-        fast = fast.next.next;
-        slow = slow.next;
-    }
-    return true;
+function push(data){
+  newNode = new Node(data)
+  newNode.next = head;
+  head = newNode
 }
-push(20);
-push(4);
-push(15);
-push(10);
 
+push(1)
+push(3)
+push(4)
 
+head.next.next = head.next
 
-head.next.next.next.next = head;
-
-if (detectLoop(head))
-    console.log("Loop found");
-else
-    console.log("No Loop");
+detectLoop(head)
+		
+		
