@@ -1,71 +1,43 @@
-// Simple Javascript program to find n'th node from end of linked list
+var head;
 
-/* Linked List node */
-class Node {
-	
-	constructor(d)
-	{
-		this.data = d;
-		this.next = null;
-	}
+class Node{
+    constructor(data){
+        this.value = data;
+        this.next = null;
+    }
 }
 
-/* Function to get the nth node from the last of a
-	linked list */
-class LinkedList
-{
 
-	constructor(d){
-	this.head = d;
-	}
-
-printNthFromLast(n)
-{
-	let len = 0;
-	let temp = this.head;
-
-	// 1) count the number of nodes in Linked List
-	while (temp != null) {
-		temp = temp.next;
-		len++;
-	}
-
-	// check if value of n is not more than length of
-	// the linked list
-	if (len < n)
-		console.log('ji');
-
-	temp = this.head;
-
-	// 2) get the (len-n+1)th node from the beginning
-	for (let i = 1; i < len - n + 1; i++)
-		temp = temp.next;
-
-	console.log(temp.data);
+function getNthFromLast(head, n){
+  let temp = head;
+  
+  let count = 0
+  while (temp != null){
+    count++
+    temp = temp.next;
+  }
+  if(count < n)
+    console.log(-1)
+  count = count - n
+  let temp1 = head;
+  for (let i = 0; i<count; i++){
+    temp1 = temp1.next
+  }
+  console.log(temp1.value)
 }
 
-/* Inserts a new Node at front of the list. */
-push(new_data)
-{
-	/* 1 & 2: Allocate the Node &
-				Put in the data*/
-	let new_node = new Node(new_data);
+function push(data){
+  newNode = new Node(data);
+  newNode.next = head;
+  head = newNode;
+} 
 
-	/* 3. Make next of new Node as head */
-	new_node.next = this.head;
+push(5)
+push(4)
+push(3)
+push(2)
+push(1)
 
-	/* 4. Move the head to point to new Node */
-	this.head = new_node;
-}
-}
-
-/*Driver program to test above methods */
-	let llist = new LinkedList();
-	llist.push(20);
-	llist.push(4);
-	llist.push(15);
-	llist.push(35);
-
-	llist.printNthFromLast(2);
-
-// This code is contributed by Saurabh Jaiswal
+getNthFromLast(head, 2)
+		
+		
