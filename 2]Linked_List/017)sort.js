@@ -1,5 +1,12 @@
-segregate(head)
-{
+var head;
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+function segregate(head) {
     let temp = head;
     let count0 = 0, count1 = 0, count2 = 0, flag = 0;
     while (temp != null) {
@@ -27,5 +34,12 @@ segregate(head)
         temp = temp.next;
         count2--;
     }
-    return head;
+    console.log(head);
 }
+
+head = new Node(1);
+head.next = new Node(2);
+head.next.next = new Node(0);
+head.next.next.next = new Node(2);
+head.next.next.next.next = new Node(2);
+segregate(head)
