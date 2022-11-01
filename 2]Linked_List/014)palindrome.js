@@ -1,20 +1,11 @@
-isPalindrome(head)
-{
-    if (head == null)
-        return true;
-
-    let mid = middle(head);
-    let last = reverse(mid)
-
-    while (last != null) {
-        if (head.data != last.data)
-            return false;
-        last = last.next;
-        head = head.next
+class Node{
+    constructor(data){
+        this.value = data;
+        this.next = null;
     }
-    return true
+}
 
-    function middle(head) {
+function middle(head) {
         let slow = head;
         let fast = head;
         while (fast != null && fast.next != null) {
@@ -24,7 +15,7 @@ isPalindrome(head)
         return slow;
     }
 
-    function reverse(node) {
+function reverse(node) {
         let prev = null;
         let current = node;
         let next = current.next;
@@ -39,5 +30,25 @@ isPalindrome(head)
         return node;
     }
 
+function isPalindrome(head){
+    if (head == null)
+        console.log(false);
 
+    let mid = middle(head);
+    let last = reverse(mid)
+
+    while (last != null) {
+        if (head.value != last.value)
+            console.log(false);
+        last = last.next;
+        head = head.next
+    }
+    console.log(true);
 }
+
+head = new Node(5);
+head.next = new Node(2);
+head.next.next = new Node(3);
+head.next.next.next = new Node(2);
+head.next.next.next.next = new Node(5);
+isPalindrome(head)
