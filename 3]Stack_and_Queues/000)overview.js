@@ -59,19 +59,67 @@ class Stack {
     console.log(this.top)
   }
   remove() {
-    const newTop = this.top.next;
-    this.top = newTop;
+    this.top = this.top.next;
     this.length--;
   }
 }
 
-const myStack = new Stack();
-myStack.append(3)
-myStack.append(4)
-myStack.append(7)
-myStack.append(8)
-myStack.display()
-myStack.remove()
-myStack.display()
+const myStack1 = new Stack();
+myStack1.append(3)
+myStack1.append(4)
+myStack1.append(7)
+myStack1.append(8)
+myStack1.display()
+myStack1.remove()
+myStack1.display()
 
+
+
+
+class Node{
+  constructor(data){
+    this.value = data;
+    this.next = null;
+  }
+}
+
+class queue{
+  constructor(){
+    this.first = null;
+    this.last = null;
+    this.length = 0;
+  }
+
+  enqueue(data){
+    const newNode = new Node(data)
+    if(this.length == 0){
+      this.first = newNode;
+      this.last = newNode;
+      this.length++
+    }
+    else{
+      this.last.next = newNode;
+      this.last = newNode;
+      this.length++
+    }
+  }
+
+  display(){
+    console.log(this.first)
+    console.log(this.last)
+  }
+
+  dequeue(){
+    this.first = this.first.next
+    this.length--;
+  }
+}
+
+const myQueue = new queue()
+myQueue.enqueue(2)
+myQueue.enqueue(3)
+myQueue.enqueue(6)
+myQueue.enqueue(7)
+myQueue.dequeue()
+myQueue.display()
 
