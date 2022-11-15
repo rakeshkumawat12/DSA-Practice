@@ -1,4 +1,4 @@
-function spirallyTraversing() {
+function spirallyTraversing(A, r, c) {
     let spiral = [];
     let size1 = r * c; let size2 = 0;
     let top = 0;
