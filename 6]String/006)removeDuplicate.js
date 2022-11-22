@@ -1,11 +1,19 @@
-function removeDup(S) {
-    let st = new Set()
-    for (let i = 0; i < S.length; i++) {
-        st.add(S[i])
+function removeDuplicate(str, n) {
+    var index = 0;
+    for (var i = 0; i < n; i++) {
+        for (var j = 0; j < i; j++) {
+            if (str[i] == str[j]) {
+                break;
+            }
+        }
+        if (j == i) {
+            str[index++] = str[i];
+        }
     }
-    console.log(st)
+
+    console.log(str.join("").slice(str, index));
 }
 
-
-let S = "zvvo";
-removeDup(S);
+var str = "geeksforgeeks".split("");
+var n = str.length;
+removeDuplicate(str, n);
