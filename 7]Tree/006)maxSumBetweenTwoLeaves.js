@@ -45,7 +45,7 @@ function maxPathSumUtil(node, res) {
     return (node.left == null) ? rs + node.data : ls + node.data;
 }
 
-function maxPathSum(node) {
+function maxPathSum(root) {
     var res = new Res();
     res.val = Number.MIN_VALUE;
 
