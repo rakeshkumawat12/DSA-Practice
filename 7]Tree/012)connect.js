@@ -2,7 +2,9 @@
 class Node {
     constructor(data) {
         this.data = data;
-        this.left = this.right = this.nextRight = null;
+        this.left = null;
+        this.right = null;
+        this.nextRight = null;
     }
 }
 function connect(p) {
@@ -35,15 +37,11 @@ root.left.left = new Node(3);
 
 connect(root);
 let a = root.nextRight != null ? root.nextRight.data : -1;
-console.log("nextRight of " + root.data + " is "
-    + a);
+console.log("nextRight of " + root.data + " is " + a);
 let b = root.left.nextRight != null ? root.left.nextRight.data : -1;
-console.log("nextRight of " + root.left.data + " is "
-    + b);
+console.log("nextRight of " + root.left.data + " is " + b);
 let c = root.right.nextRight != null ? root.right.nextRight.data : -1;
-console.log("nextRight of " + root.right.data + " is "
-    + c);
+console.log("nextRight of " + root.right.data + " is " + c);
 let d = root.left.left.nextRight != null ? root.left.left.nextRight.data : -1;
-console.log("nextRight of " + root.left.left.data + " is "
-    + d);
+console.log("nextRight of " + root.left.left.data + " is " + d);
 
