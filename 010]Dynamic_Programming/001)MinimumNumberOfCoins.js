@@ -10,8 +10,7 @@ function minCoins(coins, n, v) {
         for (let j = 0; j < n; j++)
             if (coins[j] <= i) {
                 let subAns = DP[i - coins[j]];
-                if (subAns != Number.MAX_VALUE
-                    && subAns + 1 < DP[i])
+                if (subAns != Number.MAX_VALUE && subAns + 1 < DP[i])
                     DP[i] = subAns + 1;
             }
     }
@@ -24,9 +23,9 @@ function minCoins(coins, n, v) {
 
 
 let coins = [9, 6, 5, 1];
-let m = coins.length;
-let V = 11;
-console.log(minCoins(coins, m, V))
+let n = coins.length;
+let v = 11;
+console.log(minCoins(coins, n, v))
 
 
 
